@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var gutil = require('gulp-util');
 var bower = require('bower');
 var concat = require('gulp-concat');
+var jshint = require('gulp-jshint');
 var sass = require('gulp-sass');
 var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
@@ -9,23 +10,38 @@ var sh = require('shelljs');
 
 var paths = {
   sass: ['./scss/**/*.scss'],
-  concat: ['www/js/**/*.js']
+  src: [
+    'app/js/app.js',
+    'app/js/controllers.js',
+  ]
 };
 
-gulp.task('default', ['sass', 'concat', 'run-android']);
+var src = [
+  'app/js/app.js',
+  'app/js/controllers.js',
+];
 
-gulp.task('run-android', function () {
-  sh.exec('ionic run android');
+gulp.task('android', ['build'], function () {
+  return sh.exec('ionic run android');
 });
 
+gulp.task('default', ['build'], function () {
+  return sh.exec('ionic serve');
+});
+
+gulp.task('build', ['sass', 'lint', 'concat', 'resources']);
+
 gulp.task('concat', function (done) {
-  gulp.src([
-    'www/js/app.js',
-    'www/js/controllers.js',
-  ])
+  gulp.src(paths.src)
   .pipe(concat('build.js'))
   .pipe(gulp.dest('www/js/'))
   .on('end', done);
+});
+
+gulp.task('lint', function () {
+  return gulp.src(paths.src)
+          .pipe(jshint())
+          .pipe(jshint.reporter('default'));
 });
 
 gulp.task('sass', function(done) {
@@ -42,8 +58,13 @@ gulp.task('sass', function(done) {
     .on('end', done);
 });
 
+gulp.task('resources', function () {
+  return sh.exec('ionic resources');
+});
+
 gulp.task('watch', function() {
   gulp.watch(paths.sass, ['sass']);
+  gulp.watch(paths.src, ['concat']);
 });
 
 gulp.task('install', ['git-check'], function() {
