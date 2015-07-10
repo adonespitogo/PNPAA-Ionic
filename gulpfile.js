@@ -71,10 +71,14 @@ gulp.task('install', function() {
     });
 });
 
-gulp.task('copy', ['copy-ionic-fonts', 'copy-templates']);
+gulp.task('copy', ['copy-ionic-fonts', 'copy-templates', 'copy-images']);
 
 gulp.task('copy-templates', function () {
   return sh.exec('cp -a app/templates/. www/templates/');
+});
+
+gulp.task('copy-images', function () {
+  return sh.exec('cp -a app/img/. www/img/');
 });
 
 gulp.task('copy-ionic-fonts', function () {
