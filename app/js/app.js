@@ -31,6 +31,24 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     controller: 'AppCtrl'
   })
 
+  .state('app.events', {
+    url: "/events",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/events/list.html"
+      }
+    }
+  })
+
+  .state('app.event', {
+    url: "/event",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/events/event.html"
+      }
+    }
+  })
+
   .state('app.discussions', {
     url: "/discussions",
     views: {
@@ -41,7 +59,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   })
 
   .state('app.discussion', {
-    url: "/discussion/\:id",
+    url: "/discussion",
     views: {
       'menuContent': {
         templateUrl: "templates/discussions/discussion.html"

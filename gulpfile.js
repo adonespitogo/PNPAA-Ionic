@@ -9,7 +9,7 @@ var sh = require('shelljs');
 var paths = {
   sass: ['app/**/*.scss'],
   libs: [
-    'app/lib/ionic/js/ionic.bundle.js',
+    'bower_components/ionic/js/ionic.bundle.js',
   ],
   src: [
     'app/js/app.js',
@@ -19,6 +19,10 @@ var paths = {
 
 var build = 'build.js';
 var dist = 'www/js';
+
+gulp.task('serve', ['build'], function () {
+  return sh.exec('ionic serve');
+});
 
 gulp.task('android', ['build', 'compress'], function () {
   return sh.exec('ionic run android');
@@ -72,7 +76,7 @@ gulp.task('copy-images', function () {
 });
 
 gulp.task('copy-ionic-fonts', function () {
-  return sh.exec('cp -a app/lib/ionic/fonts/. www/fonts/ionicons/');
+  return sh.exec('cp -a bower_components/ionic/fonts/. www/fonts/ionicons/');
 });
 
 gulp.task('compress', function() {
@@ -84,4 +88,5 @@ gulp.task('compress', function() {
 gulp.task('watch', function() {
   gulp.watch(paths.sass, ['sass']);
   gulp.watch(paths.src, ['concat']);
+  gulp.watch('app/**/*.html', ['copy']);
 });
