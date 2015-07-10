@@ -1,10 +1,16 @@
 <ion-view view-title="Discussion">
+
+  <ion-nav-buttons side="right">
+    <button class="button button-icon" ng-click="showActions()">
+      <i class="icon ion-android-more-vertical"></i>
+    </button>
+  </ion-nav-buttons>
+
   <ion-content class="discussion">
     <div class="list">
-      <div class="item item-body">
+      <div class="item item-body" on-hold="showActions()">
         <span class="post-owner">
           Maria Ozawa <small>posted</small>
-          <i class="icon ion-ios-arrow-down"></i>
         </span> <br>
 
         <span class="post-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos cum, non, omnis, ipsum suscipit ullam eum esse nobis nesciunt sequi, dolores dolorem odit. Alias vitae officiis unde incidunt iste ut!</span><br>

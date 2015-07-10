@@ -1,10 +1,12 @@
+(function () {
+
 // Ionic Starter App
 
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('PNPAA', ['ionic', 'app.controllers'])
+this.App = angular.module('PNPAA', ['ionic'])
 
 .run(['$ionicPlatform', function($ionicPlatform) {
 
@@ -62,7 +64,8 @@ angular.module('PNPAA', ['ionic', 'app.controllers'])
     url: "/discussion",
     views: {
       'menuContent': {
-        templateUrl: "templates/discussions/discussion.html"
+        templateUrl: "templates/discussions/discussion.html",
+        controller: "DiscussionCtrl"
       }
     }
   })
@@ -70,3 +73,6 @@ angular.module('PNPAA', ['ionic', 'app.controllers'])
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/discussions');
 }]);
+
+
+}).call(window);

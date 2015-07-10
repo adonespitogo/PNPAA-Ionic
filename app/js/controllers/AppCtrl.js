@@ -1,6 +1,6 @@
-angular.module('app.controllers', [])
+(function () {
 
-.controller('AppCtrl', [
+App.controller('AppCtrl', [
   '$scope', '$ionicModal', '$timeout',
   function($scope, $ionicModal, $timeout) {
 
@@ -41,7 +41,7 @@ angular.module('app.controllers', [])
       $scope.closeLogin();
     }, 1000);
   };
-}])
+}]);
 
 
-;
+}).call(window);

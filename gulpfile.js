@@ -14,7 +14,7 @@ var paths = {
   ],
   src: [
     'app/js/app.js',
-    'app/js/controllers.js',
+    'app/js/controllers/**/*.js',
   ]
 };
 
@@ -86,6 +86,6 @@ gulp.task('compress', function() {
 
 gulp.task('watch', function() {
   gulp.watch(paths.sass, ['sass']);
-  gulp.watch(paths.src, ['concat']);
+  gulp.watch(paths.src, ['lint', 'concat']);
   gulp.watch('app/**/*.html', ['copy']);
 });
