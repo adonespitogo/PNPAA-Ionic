@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers'])
+angular.module('PNPAA', ['ionic', 'app.controllers'])
 
 .run(['$ionicPlatform', function($ionicPlatform) {
 
@@ -31,6 +31,24 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     controller: 'AppCtrl'
   })
 
+  .state('app.events', {
+    url: "/events",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/events/list.html"
+      }
+    }
+  })
+
+  .state('app.event', {
+    url: "/event",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/events/event.html"
+      }
+    }
+  })
+
   .state('app.discussions', {
     url: "/discussions",
     views: {
@@ -41,7 +59,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   })
 
   .state('app.discussion', {
-    url: "/discussion/\:id",
+    url: "/discussion",
     views: {
       'menuContent': {
         templateUrl: "templates/discussions/discussion.html"
