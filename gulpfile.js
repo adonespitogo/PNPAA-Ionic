@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var jshint = require('gulp-jshint');
+var stylish = require('jshint-stylish');
 var sass = require('gulp-sass');
 var minifyCss = require('gulp-minify-css');
 var sh = require('shelljs');
@@ -24,15 +25,13 @@ gulp.task('serve', ['build'], function () {
   return sh.exec('ionic serve');
 });
 
-gulp.task('android', ['build', 'compress'], function () {
+gulp.task('android', ['build', 'compress', 'resources'], function () {
   return sh.exec('ionic run android');
 });
 
-gulp.task('default', ['build'], function () {
-  return sh.exec('ionic serve');
-});
+gulp.task('default', ['android']);
 
-gulp.task('build', ['sass', 'lint', 'concat', 'copy', 'resources']);
+gulp.task('build', ['sass', 'lint', 'concat', 'copy']);
 
 gulp.task('concat', function () {
   src = paths.libs.concat(paths.src);
@@ -45,20 +44,20 @@ gulp.task('lint', function (done) {
 
   return gulp.src(paths.src)
         .pipe(jshint())
-        .pipe(jshint.reporter('default'));
+        .pipe(jshint.reporter(stylish))
+        .pipe(jshint.reporter('fail'));
 });
 
-gulp.task('sass', function(done) {
-  gulp.src('./app/scss/app.scss')
-    .pipe(sass({
-      errLogToConsole: true
-    }))
-    .pipe(gulp.dest('./www/css/'))
-    .pipe(minifyCss({
-      keepSpecialComments: 0
-    }))
-    .pipe(gulp.dest('./www/css/'))
-    .on('end', done);
+gulp.task('sass', function() {
+  return gulp.src('./app/scss/app.scss')
+          .pipe(sass({
+            errLogToConsole: true
+          }))
+          .pipe(gulp.dest('./www/css/'))
+          .pipe(minifyCss({
+            keepSpecialComments: 0
+          }))
+          .pipe(gulp.dest('./www/css/'));
 });
 
 gulp.task('resources', function () {
@@ -68,15 +67,15 @@ gulp.task('resources', function () {
 gulp.task('copy', ['copy-ionic-fonts', 'copy-templates', 'copy-images']);
 
 gulp.task('copy-templates', function () {
-  return sh.exec('cp -a app/templates/. www/templates/');
+  return gulp.src('app/templates/**/*.html').pipe(gulp.dest('www/templates'));
 });
 
 gulp.task('copy-images', function () {
-  return sh.exec('cp -a app/img/. www/img/');
+  return gulp.src('app/img/**/*').pipe(gulp.dest('www/img'));
 });
 
 gulp.task('copy-ionic-fonts', function () {
-  return sh.exec('cp -a bower_components/ionic/fonts/. www/fonts/ionicons/');
+  return gulp.src('bower_components/ionic/fonts/**/*').pipe(gulp.dest('www/fonts/ionicons'));
 });
 
 gulp.task('compress', function() {

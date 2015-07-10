@@ -1,19 +1,5 @@
 .discussion{
-  .post-owner {
-    font-weight: bold;
-    font-size: 15px;
-    small {
-      font-size: 400;
-      color: gray;
-    }
-  }
-  .post-datetime {
-    font-size: 12px;
-    color: lighten($base_color, 50%);
-  }
-  .post-content {
-    font-size: 16px;
-  }
+  @extend .comment;
   .comment-count {
     color: lighten($base_color, 50%);
   }

@@ -1,17 +1,15 @@
 <ion-view view-title="General Discussions">
-  <ion-content>
-
-    <div class="discussion">
-      <div class="list">
-        <div class="item item-divider">
+  <ion-content class="discussion">
+      <ion-list>
+        <ion-item class="item-divider">
           July 2015
-        </div>
+        </ion-item>
 
-        <a class="item" ui-sref="app.discussion" ng-repeat="i in [1,2,3]">
-          <div class="post-owner">
+        <ion-item ui-sref="app.discussion" ng-repeat="i in [1,2,3]">
+          <span class="post-owner">
             Maria Ozawa
-          </div>
-          <div class="post-datetime">July 1, 2015 1:30 PM</div>
+          </span> <br>
+          <span class="post-datetime">July 1, 2015 1:30 PM</span> <br>
 
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos cum, non, omnis, ipsum suscipit ullam eum esse nobis nesciunt sequi, dolores dolorem odit. Alias vitae officiis unde incidunt iste ut!
           <br>
@@ -19,7 +17,7 @@
             <i class="icon ion-chatbubble"></i>
             5 comments
           </small>
-        </a>
+        </ion-item>
 
         <div class="item item-divider">
           June 2015
@@ -43,8 +41,7 @@
         <a href="#" class="button button-stable button-full">
           Older posts
         </a>
-      </div>
-    </div>
+      </ion-list>
 
   </ion-content>
 </ion-view>
