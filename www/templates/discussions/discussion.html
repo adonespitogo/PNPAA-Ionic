@@ -1,28 +1,35 @@
-<ion-view>
-  <ion-content>
-      <div class="list card">
-        <div class="item item-avatar">
-          <img src="img/ionic.png" alt="">
-          <h2>Adones Pitogo</h2>
-          <p>July 1, 2015</p>
-        </div>
+<ion-view view-title="Discussion">
+  <ion-content class="discussion">
+    <div class="padding">
+      <div class="post-owner">
+        Maria Ozawa
+      </div>
+      <div class="post-datetime">July 1, 2015 1:30 PM</div>
 
-        <div class="item item-body">
-          <h2>Topic title here</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus nesciunt adipisci alias aliquid animi ducimus esse eum, itaque at quas consectetur praesentium, facilis, reiciendis assumenda iure quo aliquam harum perspiciatis!</p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos cum, non, omnis, ipsum suscipit ullam eum esse nobis nesciunt sequi, dolores dolorem odit. Alias vitae officiis unde incidunt iste ut!
+    </div>
+    <hr>
+    <p class="comment-count padding">
+      <i class="icon ion-chatbubble"></i>
+      5 responses
+    </p>
+    <div class="list">
+      <div class="item item-body" ng-repeat="i in [1,2,3,4,5,6]">
+        <div class="discussion padding">
+          <div class="post-owner">
+            Maria Ozawa
+          </div>
+          <div class="post-datetime">July 1, 2015 1:30 PM</div>
+
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos cum, non, omnis, ipsum suscipit ullam eum esse nobis nesciunt sequi, dolores dolorem odit. Alias vitae officiis unde incidunt iste ut!
         </div>
       </div>
-      <div class="list">
-        <div class="item item-body">
-        <p>
-          <img src="img/ionic.png" alt="" style="width: 30px; vertical-align: middle;">
-          <small>Adones Pitogo</small>
-        </p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum ut quae voluptate ullam! Quam hic deserunt, illum doloribus. Impedit quod nobis, repellendus maiores adipisci minima dolor amet in, eum voluptatibus.
-        <br>
-        <small>July 1, 2015</small>
-        </p>
-        </div>
+      <div class="item item-input-inset">
+        <label class="item-input-wrapper">
+          <input id="reply" type="text" placeholder="Write a reply">
+        </label>
+        <button class="button button-small"><i class="icon ion-paper-airplane"></i></button>
       </div>
+    </div>
   </ion-content>
 </ion-view>

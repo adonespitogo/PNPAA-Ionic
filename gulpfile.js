@@ -45,7 +45,7 @@ gulp.task('lint', function () {
 });
 
 gulp.task('sass', function(done) {
-  gulp.src('./scss/ionic.app.scss')
+  gulp.src('./scss/app.scss')
     .pipe(sass({
       errLogToConsole: true
     }))
@@ -53,7 +53,6 @@ gulp.task('sass', function(done) {
     .pipe(minifyCss({
       keepSpecialComments: 0
     }))
-    .pipe(rename({ extname: '.min.css' }))
     .pipe(gulp.dest('./www/css/'))
     .on('end', done);
 });

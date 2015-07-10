@@ -1,40 +1,50 @@
 <ion-view view-title="General Discussions">
   <ion-content>
-    <div class="list">
 
-      <div class="item item-divider">
-        July 2015
+    <div class="discussion-list">
+      <div class="list">
+        <div class="item item-divider">
+          July 2015
+        </div>
+
+        <a class="item" ui-sref="app.discussion" ng-repeat="i in [1,2,3]">
+          <div class="post-owner">
+            Maria Ozawa
+          </div>
+          <div class="post-datetime">July 1, 2015 1:30 PM</div>
+
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos cum, non, omnis, ipsum suscipit ullam eum esse nobis nesciunt sequi, dolores dolorem odit. Alias vitae officiis unde incidunt iste ut!
+          <br>
+          <small class="comment-count">
+            <i class="icon ion-chatbubble"></i>
+            5 responses
+          </small>
+        </a>
+
+        <div class="item item-divider">
+          June 2015
+        </div>
+
+        <a class="item" href="#" ng-repeat="i in [1,2,3]">
+          Topic title here
+        </a>
+
+        <div class="item item-divider">
+          May 2015
+        </div>
+
+        <a class="item" href="#" ng-repeat="i in [1,2,3]">
+          Topic title here
+        </a>
+
+        <a href="#" class="button button-stable button-full">
+          Previous posts
+        </a>
+        <a href="#" class="button button-stable button-full">
+          Older posts
+        </a>
       </div>
-
-      <a class="item item-body" ui-sref="app.discussion" ng-repeat="i in [1,2,3]">
-        Topic title here title here title here title here title here title here title here title here
-        <br>
-        <small><i class="icon ion-chatbubble"></i> 5 comments</small>
-      </a>
-
-      <div class="item item-divider">
-        June 2015
-      </div>
-
-      <a class="item" href="#" ng-repeat="i in [1,2,3]">
-        Topic title here
-      </a>
-
-      <div class="item item-divider">
-        May 2015
-      </div>
-
-      <a class="item" href="#" ng-repeat="i in [1,2,3]">
-        Topic title here
-      </a>
-
-      <a href="#" class="button button-stable button-full">
-        Previous posts
-      </a>
-      <a href="#" class="button button-stable button-full">
-        Older posts
-      </a>
-
     </div>
+
   </ion-content>
 </ion-view>
