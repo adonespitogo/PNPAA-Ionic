@@ -1,12 +1,9 @@
 var gulp = require('gulp');
-var gutil = require('gulp-util');
-var bower = require('bower');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var jshint = require('gulp-jshint');
 var sass = require('gulp-sass');
 var minifyCss = require('gulp-minify-css');
-var rename = require('gulp-rename');
 var sh = require('shelljs');
 
 var paths = {
@@ -62,13 +59,6 @@ gulp.task('sass', function(done) {
 
 gulp.task('resources', function () {
   return sh.exec('ionic resources');
-});
-
-gulp.task('install', function() {
-  return bower.commands.install()
-    .on('log', function(data) {
-      gutil.log('bower', gutil.colors.cyan(data.id), data.message);
-    });
 });
 
 gulp.task('copy', ['copy-ionic-fonts', 'copy-templates', 'copy-images']);
