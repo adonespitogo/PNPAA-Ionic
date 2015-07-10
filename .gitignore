@@ -6,3 +6,5 @@ platforms/
 plugins/
 resources/android/
 resources/ios/
+www/css/app.css
+www/js/build.js

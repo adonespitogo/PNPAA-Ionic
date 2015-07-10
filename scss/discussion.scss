@@ -1,3 +1,5 @@
+$writepad_height: 50px;
+
 .discussion{
   .post-owner {
     font-weight: bold;
@@ -11,5 +13,33 @@
   }
   .comment-count {
     color: lighten($base_color, 50%);
+  }
+  .writepad-placeholder {
+    height: $writepad_height;
+  }
+}
+
+.writepad {
+  position: fixed;
+  display: block;
+  bottom: 0;
+  left: 0;
+  height: $writepad_height;
+  width: 100%;
+  z-index: 100;
+
+  .item {
+    padding: 7px;
+  }
+
+  textarea {
+    width: 80%;
+    height: 100%;
+    display: inline-block;
+  }
+  button {
+    vertical-align: middle;
+    display: inline-block;
+    width: 18%;
   }
 }
