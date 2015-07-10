@@ -3,6 +3,11 @@ $writepad_height: 50px;
 .discussion{
   .post-owner {
     font-weight: bold;
+    font-size: 15px;
+    small {
+      font-size: 400;
+      color: gray;
+    }
   }
   .post-datetime {
     font-size: 12px;
@@ -36,10 +41,12 @@ $writepad_height: 50px;
     width: 80%;
     height: 100%;
     display: inline-block;
+    padding-top:10px;
   }
   button {
     vertical-align: middle;
     display: inline-block;
     width: 18%;
+    margin-top: -8px;
   }
 }
