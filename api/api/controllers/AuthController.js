@@ -35,5 +35,8 @@ module.exports = {
         }
       });
     })
+  },
+  verify: function (req, res) {
+    res.json(200, {});
   }
 };

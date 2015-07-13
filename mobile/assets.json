@@ -1,0 +1,21 @@
+{
+  "sass": {
+    "all": ["app/**/*.scss"],
+    "main": "app/scss/app.scss"
+  },
+  "js": {
+    "libs": [
+      "bower_components/jquery/dist/jquery.js",
+      "bower_components/ionic/js/ionic.bundle.js",
+      "bower_components/simpleStorage/simpleStorage.js",
+      "bower_components/angular-http-auth/src/http-auth-interceptor.js"
+    ],
+    "src": [
+      "app/js/app.js",
+      "app/js/init.js",
+      "app/js/routes.js",
+      "app/js/controllers/**/*.js",
+      "app/js/services/**/*.js"
+    ]
+  }
+}

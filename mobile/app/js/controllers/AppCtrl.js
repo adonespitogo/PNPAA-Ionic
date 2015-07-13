@@ -1,8 +1,8 @@
 (function () {
 
 App.controller('AppCtrl', [
-  '$scope', '$ionicModal', '$timeout',
-  function($scope, $ionicModal, $timeout) {
+  '$scope', '$ionicModal', '$timeout', '$window',
+  function($scope, $ionicModal, $timeout, $window) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -41,6 +41,12 @@ App.controller('AppCtrl', [
       $scope.closeLogin();
     }, 1000);
   };
+
+  $scope.logout = function () {
+    simpleStorage.deleteKey('token');
+    $window.location.reload();
+  };
+
 }]);
 
 

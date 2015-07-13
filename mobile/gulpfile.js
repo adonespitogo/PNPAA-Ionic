@@ -6,27 +6,15 @@ var stylish = require('jshint-stylish');
 var sass = require('gulp-sass');
 var minifyCss = require('gulp-minify-css');
 var sh = require('shelljs');
-
-var paths = {
-  sass: ['app/**/*.scss'],
-  libs: [
-    'bower_components/ionic/js/ionic.bundle.js',
-  ],
-  src: [
-    'app/js/app.js',
-    'app/js/controllers/**/*.js',
-  ]
-};
-
 var build = 'build.js';
-var dist = 'www/js';
+var dist = './www/js/';
 
 gulp.task('serve', ['build'], function () {
-  return sh.exec('ionic serve');
+  return sh.exec('ionic serve', {async: true});
 });
 
 gulp.task('android', ['resources', 'build', 'compress'], function () {
-  return sh.exec('ionic run android');
+  return sh.exec('ionic run android', {async: true});
 });
 
 gulp.task('default', ['android']);
@@ -34,7 +22,10 @@ gulp.task('default', ['android']);
 gulp.task('build', ['sass', 'lint', 'concat', 'copy']);
 
 gulp.task('concat', function () {
-  src = paths.libs.concat(paths.src);
+
+  var assets = require("./assets.json");
+
+  src = assets.js.libs.concat(assets.js.src);
   return gulp.src(src)
   .pipe(concat(build))
   .pipe(gulp.dest(dist));
@@ -42,14 +33,19 @@ gulp.task('concat', function () {
 
 gulp.task('lint', function (done) {
 
-  return gulp.src(paths.src)
+  var assets = require("./assets.json");
+
+  return gulp.src(assets.js.src)
         .pipe(jshint())
         .pipe(jshint.reporter(stylish))
         .pipe(jshint.reporter('fail'));
 });
 
 gulp.task('sass', function() {
-  return gulp.src('./app/scss/app.scss')
+
+  var assets = require("./assets.json");
+
+  return gulp.src(assets.sass.main)
           .pipe(sass({
             errLogToConsole: true
           }))
@@ -78,14 +74,29 @@ gulp.task('copy-ionic-fonts', function () {
   return gulp.src('bower_components/ionic/fonts/**/*').pipe(gulp.dest('www/fonts/ionicons'));
 });
 
-gulp.task('compress', function() {
-  return gulp.src(dist+'/'+build)
+gulp.task('compress', ['concat'], function() {
+  return gulp.src(dist+build)
         .pipe(uglify())
         .pipe(gulp.dest(dist));
 });
 
+var pluginsTask = require('./tasks/plugins');
+gulp.task('plugins', function () {
+  pluginsTask();
+});
+
+
+var platformsTask = require('./tasks/platforms');
+gulp.task('platforms', function () {
+  platformsTask();
+});
+
 gulp.task('watch', function() {
-  gulp.watch(paths.sass, ['sass']);
-  gulp.watch(paths.src, ['lint', 'concat']);
+
+  var assets = require("./assets.json");
+
+  gulp.watch(assets.sass.all, ['sass']);
+  gulp.watch(assets.js.src, ['lint', 'concat']);
+  gulp.watch('./assets.json', ['build']);
   gulp.watch('app/**/*.html', ['copy']);
 });
