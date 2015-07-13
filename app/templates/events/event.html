@@ -3,23 +3,45 @@
     <div class="list">
       <div class="item item-body">
         <h2>ED - PN Sports Feast</h2>
+        <img src="img/profile.jpg" alt="" class="full-image">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur laborum, est animi magnam maiores explicabo tempora cupiditate. In necessitatibus ipsam, placeat, ab est provident dolores molestias ipsum accusantium dolore eum!</p>
-        <div class="row">
-          <div class="padding-right">
-            <i class="icon ion-android-pin"></i>
-          </div>
-          <small>Family Park</small>
+        <div>
+          <i class="icon ion-android-pin"></i>
+          <small class="padding-left">Family Park</small>
         </div>
-        <div class="row">
-          <div class="padding-right">
-            <i class="icon ion-ios-clock-outline"></i>
-          </div>
-          <small>June 1 1:00 PM</small>
+        <div class="padding-bottom">
+          <i class="icon ion-ios-clock-outline"></i>
+          <small class="padding-left">June 1 1:00 PM</small>
         </div>
+        <div class="padding-bottom">
+          <ion-toggle ng-model="airplaneMode" toggle-class="toggle-calm">
+            <i class="icon ion-person"></i>
+            <small>Are you comming?</small>
+          </ion-toggle>
+        </div>
+        <b>Attending</b>
+        <ion-list>
+          <ion-item ng-repeat="i in [1,2,3]">
+            <i class="icon ion-person"></i>
+            <small class="padding-left">Adones Pitogo</small>
+          </ion-item>
+        </ion-list>
       </div>
       <div class="item item-divider">
         <small><i class="icon ion-chatbubbles"></i> 13 comments</small>
       </div>
+      <div class="item item-body comment" ng-repeat="i in [1,2,3,4,5,6]">
+        <div class="">
+          <div class="post-owner">
+            Maria Ozawa
+          </div>
+          <div class="post-datetime">July 1, 2015 1:30 PM</div>
+          <div class="post-content">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos cum, non, omnis, ipsum suscipit ullam eum esse nobis nesciunt sequi, dolores dolorem odit. Alias vitae officiis unde incidunt iste ut!
+          </div>
+        </div>
+      </div>
+      <div class="writepad-placeholder"></div>
     </div>
   </ion-content>
 </ion-view>
