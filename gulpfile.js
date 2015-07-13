@@ -25,7 +25,7 @@ gulp.task('serve', ['build'], function () {
   return sh.exec('ionic serve');
 });
 
-gulp.task('android', ['build', 'compress', 'resources'], function () {
+gulp.task('android', ['resources', 'build', 'compress'], function () {
   return sh.exec('ionic run android');
 });
 
