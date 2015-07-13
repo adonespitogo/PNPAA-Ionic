@@ -14,6 +14,7 @@
       "app/js/app.js",
       "app/js/init.js",
       "app/js/routes.js",
+      "app/js/events/**/*.js",
       "app/js/controllers/**/*.js",
       "app/js/services/**/*.js"
     ]

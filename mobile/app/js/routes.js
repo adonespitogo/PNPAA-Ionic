@@ -10,6 +10,12 @@
 
       $stateProvider
 
+      .state('login', {
+        url: '/login',
+        templateUrl: 'templates/login.html',
+        controller: 'LoginCtrl'
+      })
+
       .state('app', {
         url: "/app",
         abstract: true,

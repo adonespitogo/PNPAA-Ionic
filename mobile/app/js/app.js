@@ -9,7 +9,9 @@
 this.App = angular.module('PNPAA', [
   'ionic',
   'http-auth-interceptor'
-])
+]);
+
+App
 
 .run([
   '$ionicPlatform',
