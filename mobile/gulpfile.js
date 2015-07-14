@@ -70,6 +70,11 @@ gulp.task('copy-images', function () {
   return gulp.src('app/img/**/*').pipe(gulp.dest('www/img'));
 });
 
+// gulp.task('copy-jquery-ui-images', function () {
+//   return gulp.src('bower_components/jquery-ui/themes/smoothness/images/**/*')
+//   .pipe(gulp.dest('www/bower_components/jquery-ui/themes/smoothness/images/'));
+// });
+
 gulp.task('copy-ionic-fonts', function () {
   return gulp.src('bower_components/ionic/fonts/**/*').pipe(gulp.dest('www/fonts/ionicons'));
 });

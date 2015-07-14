@@ -41,6 +41,16 @@
         }
       })
 
+      .state('app.createEvent', {
+        url: "/event/new",
+        views: {
+          'menuContent': {
+            templateUrl: "templates/events/create.html",
+            controller: 'CreateEventCtrl'
+          }
+        }
+      })
+
       .state('app.discussions', {
         url: "/discussions",
         views: {

@@ -1,6 +1,8 @@
 {
   "sass": {
-    "all": ["app/**/*.scss"],
+    "all": [
+      "app/**/*.scss"
+    ],
     "main": "app/scss/app.scss"
   },
   "js": {
@@ -8,7 +10,8 @@
       "bower_components/jquery/dist/jquery.js",
       "bower_components/ionic/js/ionic.bundle.js",
       "bower_components/simpleStorage/simpleStorage.js",
-      "bower_components/angular-http-auth/src/http-auth-interceptor.js"
+      "bower_components/angular-http-auth/src/http-auth-interceptor.js",
+      "bower_components/ngAutocomplete/src/ngAutocomplete.js"
     ],
     "src": [
       "app/js/app.js",
@@ -16,7 +19,8 @@
       "app/js/routes.js",
       "app/js/events/**/*.js",
       "app/js/controllers/**/*.js",
-      "app/js/services/**/*.js"
+      "app/js/services/**/*.js",
+      "app/js/directives/**/*.js"
     ]
   }
 }

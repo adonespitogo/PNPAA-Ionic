@@ -41,13 +41,18 @@
         <a class="item" href="#" ng-repeat="i in [1,2,3]">
           Topic title here
         </a>
-
-        <a href="#" class="button button-stable button-full">
-          Previous posts
-        </a>
-        <a href="#" class="button button-stable button-full">
-          Older posts
-        </a>
+        <div class="item">
+          <div class="button-bar">
+            <button class="button">
+              <i class="icon ion-chevron-left padding-right"></i>
+              Earlier Posts
+            </button>
+            <button class="button">
+              Older Posts
+              <i class="icon ion-chevron-right padding-left"></i>
+            </button>
+          </div>
+        </div>
       </ion-list>
 
   </ion-content>

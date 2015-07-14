@@ -8,7 +8,8 @@
 // 'starter.controllers' is found in controllers.js
 this.App = angular.module('PNPAA', [
   'ionic',
-  'http-auth-interceptor'
+  'http-auth-interceptor',
+  'ngAutocomplete',
 ]);
 
 App
