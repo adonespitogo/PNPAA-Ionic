@@ -128,3 +128,12 @@ gulp.task('watch', function() {
   gulp.watch('app/**/*.html', ['copy']);
 });
 
+var deployAndroid = require('./tasks/deploy.google-play');
+gulp.task('build:android', function () {
+  return deployAndroid(gulp);
+});
+
+gulp.task('zipalign', function () {
+  return sh.exec('zipalign -v 4 releases/android/unsigned.apk releases/android/release.apk');
+});
+
