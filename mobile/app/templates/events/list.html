@@ -7,18 +7,28 @@
   </ion-nav-buttons>
 
   <ion-content class="events">
-    <div class="list">
+    <ion-list>
       <div class="item item-divider">
         Upcoming Events
       </div>
-      <div class="item" ng-repeat="i in [1,2,3]" ui-sref="app.event">
+      <ion-item ng-repeat="i in [1,2,3]" ui-sref="app.event">
         <h2>Sports Feast 2015</h2>
         <div><small>Jun 1, 2015</small></div>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque molestias fugit, sunt sapiente tempora modi quos iusto esse quasi corporis necessitatibus! Minus doloremque quis eum perferendis non. Voluptatibus, dicta, deleniti.</p>
-      </div>
+      </ion-item>
       <div class="item item-divider">
         Previous Events
       </div>
-    </div>
+      <ion-item ng-repeat="i in [1,2,3]" ui-sref="app.event">
+        <h2>Sports Feast 2015</h2>
+        <div><small>Jun 1, 2015</small></div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque molestias fugit, sunt sapiente tempora modi quos iusto esse quasi corporis necessitatibus! Minus doloremque quis eum perferendis non. Voluptatibus, dicta, deleniti.</p>
+      </ion-item>
+      <ion-item>
+        <div class="text-center">
+          <button class="button button-bar text-center">More ...</button>
+        </div>
+      </ion-item>
+    </ion-list>
   </ion-content>
 </ion-view>
