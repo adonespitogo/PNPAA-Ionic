@@ -129,7 +129,7 @@ gulp.task('watch', function() {
 });
 
 var deployAndroid = require('./tasks/deploy.google-play');
-gulp.task('build:android', function () {
+gulp.task('build:android', ['build', 'compress', 'host'], function () {
   return deployAndroid(gulp);
 });
 
