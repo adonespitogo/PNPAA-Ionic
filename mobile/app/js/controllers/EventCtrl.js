@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  App.controller('DiscussionCtrl', [
+  App.controller('EventCtrl', [
     '$scope', '$ionicPopover',
     function ($scope, $ionicPopover) {
 

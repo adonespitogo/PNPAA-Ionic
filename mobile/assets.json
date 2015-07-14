@@ -14,8 +14,8 @@
       "bower_components/ngAutocomplete/src/ngAutocomplete.js"
     ],
     "src": [
-      "app/js/app.js",
       "app/js/init.js",
+      "app/js/app.js",
       "app/js/values.js",
       "app/js/routes.js",
       "app/js/events/**/*.js",

@@ -16,6 +16,15 @@
         controller: 'LoginCtrl'
       })
 
+      .state('app.home', {
+        url: '/home',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/home.html'
+          }
+        }
+      })
+
       .state('app', {
         url: "/app",
         abstract: true,
@@ -36,7 +45,8 @@
         url: "/event",
         views: {
           'menuContent': {
-            templateUrl: "templates/events/event.html"
+            templateUrl: "templates/events/event.html",
+            controller: 'EventCtrl'
           }
         }
       })
@@ -71,7 +81,7 @@
       })
     ;
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/app/discussions');
+    $urlRouterProvider.otherwise('/app/home');
   }])
 
   ;

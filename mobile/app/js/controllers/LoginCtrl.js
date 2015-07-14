@@ -7,7 +7,8 @@
     '$state',
     '$ionicPopup',
     '$ionicLoading',
-    function ($scope, Auth, $state, $ionicPopup, $ionicLoading) {
+    'homeState',
+    function ($scope, Auth, $state, $ionicPopup, $ionicLoading, homeState) {
 
       $scope.loginData = {};
 
@@ -19,7 +20,7 @@
 
         Auth.login($scope.loginData)
         .success(function () {
-          $state.go('app.discussions');
+          $state.go(homeState);
           $ionicLoading.hide();
         })
         .error(function (resp) {
