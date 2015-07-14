@@ -23,6 +23,8 @@
           $ionicLoading.hide();
         })
         .error(function (resp) {
+          resp = resp || 'Unable to login.';
+
           $ionicLoading.hide();
 
           var err = resp.err || resp;

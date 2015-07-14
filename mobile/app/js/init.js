@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  var host = "http://192.168.1.178:1337";
+  window.host = "http://localhost:1337";
 
   function loginFailCB () {
     simpleStorage.deleteKey('token');

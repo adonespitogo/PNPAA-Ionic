@@ -6,15 +6,13 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-this.App = angular.module('PNPAA', [
+window.App = angular.module('PNPAA', [
   'ionic',
   'http-auth-interceptor',
   'ngAutocomplete',
 ]);
 
-App
-
-.run([
+window.App.run([
   '$ionicPlatform',
   '$rootScope',
   function ($ionicPlatform, $rootScope) {
