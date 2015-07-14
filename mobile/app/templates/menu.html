@@ -13,24 +13,27 @@
   </ion-side-menu-content>
 
   <ion-side-menu side="left">
-    <ion-header-bar class="bar-stable">
-      <h1 class="title">PNPAA</h1>
-    </ion-header-bar>
     <ion-content>
+
       <ion-list>
-        <ion-item menu-close ui-sref="app.home">
+        <div class="item item-avatar">
+          <img src="/img/profile.jpg" class="image-full">
+          <h2>Adones Pitogo</h2>
+          <p>Web Dev</p>
+        </div>
+        <ion-item class="item-icon-left" menu-close ui-sref="app.home">
           <i class="icon ion-home padding-right"></i>
           Home
         </ion-item>
-        <ion-item menu-close ui-sref="app.discussions">
-          <i class="icon ion-chatbubbles padding-right"></i>
+        <ion-item class="item-icon-left" menu-close ui-sref="app.discussions">
+          <i class="icon ion-chatboxes padding-right"></i>
           Discussions
         </ion-item>
-        <ion-item menu-close ui-sref="app.events">
+        <ion-item class="item-icon-left" menu-close ui-sref="app.events">
           <i class="icon ion-beer padding-right"></i>
           Events
         </ion-item>
-        <ion-item menu-close ng-click="logout()">
+        <ion-item class="item-icon-left" menu-close ng-click="logout()">
           <i class="icon ion-log-out padding-right"></i>
           Logout
         </ion-item>
