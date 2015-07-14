@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var replace = require('gulp-replace');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var jshint = require('gulp-jshint');
@@ -6,9 +7,9 @@ var stylish = require('jshint-stylish');
 var sass = require('gulp-sass');
 var minifyCss = require('gulp-minify-css');
 var sh = require('shelljs');
+var del = require('del');
 var build = 'build.js';
 var dist = './www/js/';
-var replace = require('gulp-replace');
 
 gulp.task('serve', ['build'], function () {
   return sh.exec('ionic serve', {async: true});
@@ -22,7 +23,7 @@ gulp.task('default', ['android']);
 
 gulp.task('build', ['sass', 'concat', 'copy']);
 
-gulp.task('concat', ['lint'], function () {
+gulp.task('concat', ['lint', 'clean-js'], function () {
 
   var assets = require("./assets.json");
 
@@ -42,7 +43,7 @@ gulp.task('lint', function (done) {
         .pipe(jshint.reporter('fail'));
 });
 
-gulp.task('sass', function() {
+gulp.task('sass', ['clean-css'], function() {
 
   var assets = require("./assets.json");
 
@@ -59,11 +60,11 @@ gulp.task('sass', function() {
 
 gulp.task('copy', ['copy-ionic-fonts', 'copy-templates', 'copy-images']);
 
-gulp.task('copy-templates', function () {
+gulp.task('copy-templates', ['clean-templates'], function () {
   return gulp.src('app/templates/**/*.html').pipe(gulp.dest('www/templates'));
 });
 
-gulp.task('copy-images', function () {
+gulp.task('copy-images', ['clean-img'], function () {
   return gulp.src('app/img/**/*').pipe(gulp.dest('www/img'));
 });
 
@@ -81,7 +82,7 @@ gulp.task('host', ['concat'], function () {
 //   .pipe(gulp.dest('www/bower_components/jquery-ui/themes/smoothness/images/'));
 // });
 
-gulp.task('copy-ionic-fonts', function () {
+gulp.task('copy-ionic-fonts', ['clean-fonts'], function () {
   return gulp.src('bower_components/ionic/fonts/**/*')
         .pipe(gulp.dest('www/fonts/ionicons'));
 });
@@ -97,10 +98,24 @@ gulp.task('plugins', function () {
   pluginsTask();
 });
 
+gulp.task('clean-css', function (done) {
+  del(['www/css/**/*'], done);
+});
 
-var platformsTask = require('./tasks/platforms');
-gulp.task('platforms', function () {
-  platformsTask();
+gulp.task('clean-fonts', function (done) {
+  del(['www/fonts/**/*'], done);
+});
+
+gulp.task('clean-img', function (done) {
+  del(['www/img/**/*'], done);
+});
+
+gulp.task('clean-js', function (done) {
+  del(['www/js/**/*'], done);
+});
+
+gulp.task('clean-templates', function (done) {
+  del(['www/templates/**/*'], done);
 });
 
 gulp.task('watch', function() {
@@ -112,3 +127,4 @@ gulp.task('watch', function() {
   gulp.watch('./assets.json', ['build']);
   gulp.watch('app/**/*.html', ['copy']);
 });
+

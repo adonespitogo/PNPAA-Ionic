@@ -6,5 +6,5 @@ Getting Started
  - `bower install`
  - `ionic resources`
  - `gulp plugins`
- - `gulp platforms`
+ - `ionic platform add android`
  - `gulp android`
