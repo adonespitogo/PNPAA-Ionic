@@ -1,0 +1,1 @@
+App.value('host', window.host);
