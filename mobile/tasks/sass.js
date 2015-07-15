@@ -10,9 +10,9 @@ gulp.task('sass', ['clean:css'], function() {
           .pipe(sass({
             errLogToConsole: true
           }))
-          .pipe(gulp.dest('../www/css/'))
+          .pipe(gulp.dest('www/css/'))
           .pipe(minifyCss({
             keepSpecialComments: 0
           }))
-          .pipe(gulp.dest('../www/css/'));
+          .pipe(gulp.dest('www/css/'));
 });

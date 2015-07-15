@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var build = 'build.js';
-var dist = '../www/js/';
+var dist = 'www/js/';
 
 gulp.task('concat', ['lint', 'clean:js'], function () {
 
