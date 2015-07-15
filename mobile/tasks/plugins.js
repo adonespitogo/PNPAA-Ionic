@@ -4,8 +4,6 @@ var gulp = require('gulp'),
     del = require('del'),
     shell = require('shelljs');
 
-    console.log(plugins);
-
 gulp.task('android:install', function() {
     return gulp.src('dist')
     .pipe(plugin(plugins));
