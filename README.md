@@ -1,13 +1,14 @@
-Getting Started
+PNPAA Ionic App
 ===============
 
 Prepare your system
 --------------
  - Install [android sdk](https://developer.android.com/sdk/installing/index.html)
  - Install [nodejs](https://nodejs.org/download/)
- - Install `cordova` `ionic` and `gulp` -> `npm install -g cordova ionic gulp`
+ - Install `cordova` `ionic` `bower` and `gulp`
+  - `npm install -g cordova ionic gulp bower`
 
-Prepare dev environment
+Getting started
 ------------------------------
  - `git clone git@github.com:adonespitogo/PNPAA-Ionic.git`
  - `cd PNPAA-Ionic`
@@ -17,15 +18,21 @@ Prepare dev environment
  - `gulp plugins`
  - `cordova platform add android`
  - `ionic browser add crosswalk`
- - `gulp debug:web`
+ - `gulp debug:web` or `gulp debug:android`
 
 Gulp tasks
 -----------
  - `gulp build:assets` - Recompiles assets from `app` to `www`
  - `gulp resources:unzip` - Unzips files from `resources.zip` to `resources` directory
  - `gulp watch` - Watch changes in `app` and recompile them
- - `gulp debug:web` - View app in the browser
  - `gulp plugins` - Install required cordova plugins
- - `gulp debug:android` - Install and run app in android device/emulator
- - `gulp release:android` - Creates ready to publish apk under `release/android/` directory
+ - `gulp debug:web` - Opens app in the browser
+ - `gulp debug:android` - Install and run app on android device/emulator
  - See [tasks directory](./tasks/) for more
+
+Important files and directories
+-------------------------------
+ - [assets.json](./assets.json) - Describes how assets are structured
+ - [/app](./app/) - Contains sources files that are concatinated, minified and copied into [/www](./www/)
+ - [/www](./www/) - Contains minified assets
+ - [/tasks](./tasks) - Contains gulp tasks
