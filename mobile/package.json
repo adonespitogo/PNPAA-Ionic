@@ -15,6 +15,7 @@
   ],
   "devDependencies": {
     "del": "^1.2.0",
+    "gulp-concat-css": "^2.2.0",
     "gulp-cordova-build-android": "^1.1.0",
     "gulp-cordova-plugin": "^1.1.0",
     "gulp-jshint": "^1.11.2",

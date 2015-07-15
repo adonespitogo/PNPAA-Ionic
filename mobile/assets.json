@@ -1,14 +1,21 @@
 {
-  "sass": {
-    "all": [
-      "app/**/*.scss"
+  "sass": [
+      "app/scss/variables.scss",
+      "app/scss/discussion.scss",
+      "app/scss/comment.scss",
+      "app/scss/writepad.scss"
     ],
-    "main": "app/scss/app.scss"
-  },
+  "css": [
+    "bower_components/onsenui/build/css/onsenui.css",
+    "bower_components/onsenui/build/css/onsen-css-components.css",
+    "app/css/app.css"
+  ],
   "js": {
     "libs": [
+      "bower_components/onsenui/build/js/angular/angular.js",
       "bower_components/jquery/dist/jquery.js",
-      "bower_components/ionic/js/ionic.bundle.js",
+      "bower_components/angular-ui-router/release/angular-ui-router.js",
+      "bower_components/onsenui/build/js/onsenui.js",
       "bower_components/simpleStorage/simpleStorage.js",
       "bower_components/angular-http-auth/src/http-auth-interceptor.js",
       "bower_components/ngAutocomplete/src/ngAutocomplete.js"
