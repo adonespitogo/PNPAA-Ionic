@@ -6,9 +6,7 @@
       "app/scss/comment.scss",
       "app/scss/writepad.scss"
     ],
-  "css": [
-    "app/css/app.css"
-  ],
+  "css": [],
   "js": {
     "libs": [
       "bower_components/jquery/dist/jquery.js",

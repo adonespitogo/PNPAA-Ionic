@@ -21,14 +21,16 @@ gulp.task('sass', ['clean:css', 'concat:sass'], function() {
           .pipe(sass({
             errLogToConsole: true
           }))
-          .pipe(gulp.dest('app/css'));
+          .pipe(gulp.dest('.tmp/'));
 });
 
 gulp.task('css', ['sass'], function () {
 
   var assets = require('../assets.json');
 
-  return gulp.src(assets.css)
+  var cssSrc = ['.tmp/app.css'].concat(assets.css);
+
+  return gulp.src(cssSrc)
           .pipe(concatCss('app.css'))
           .pipe(minifyCss({
             keepSpecialComments: 0
