@@ -25,9 +25,9 @@ Gulp tasks
  - `gulp build:assets` - Recompiles assets from `app` to `www`
  - `gulp resources:unzip` - Unzips files from `resources.zip` to `resources` directory
  - `gulp watch` - Watch changes in `app` and recompile them
- - `gulp debug:web` - View app in the browser
  - `gulp plugins` - Install required cordova plugins
- - `gulp debug:android` - Install and run app in android device/emulator
+ - `gulp debug:web` - Opens app in the browser
+ - `gulp debug:android` - Install and run app on android device/emulator
 
 Important files and directories
 -------------------------------
