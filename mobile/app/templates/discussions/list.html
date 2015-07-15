@@ -8,11 +8,11 @@
 
   <ion-content class="discussion">
       <ion-list>
-        <ion-item class="item-divider">
+        <!-- <ion-item class="item-divider">
           July 2015
         </ion-item>
-
-        <ion-item ui-sref="app.discussion" ng-repeat="i in [1,2,3]">
+ -->
+        <div class="item" ui-sref="app.discussion" collection-repeat="i in [1,2,3,4,5,6,7,8,9,10,11]">
           <span class="post-owner">
             Maria Ozawa
           </span> <br>
@@ -24,24 +24,24 @@
             <i class="icon ion-chatbubble"></i>
             5 comments
           </small>
-        </ion-item>
+        </div>
 
-        <div class="item item-divider">
+     <!--    <div class="item item-divider">
           June 2015
-        </div>
-
-        <a class="item" href="#" ng-repeat="i in [1,2,3]">
+        </div> -->
+<!-- 
+        <a class="item" href="#" collection-repeat="i in [1,2,3]">
           Topic title here
-        </a>
+        </a> -->
 
-        <div class="item item-divider">
+        <!-- <div class="item item-divider">
           May 2015
-        </div>
+        </div> -->
 
-        <a class="item" href="#" ng-repeat="i in [1,2,3]">
+<!--         <a class="item" href="#" collection-repeat="i in [1,2,3]">
           Topic title here
-        </a>
-        <div class="item">
+        </a> -->
+<!--         <div class="item">
           <div class="button-bar">
             <button class="button">
               <i class="icon ion-chevron-left padding-right"></i>
@@ -52,7 +52,7 @@
               <i class="icon ion-chevron-right padding-left"></i>
             </button>
           </div>
-        </div>
+        </div> -->
       </ion-list>
 
   </ion-content>
