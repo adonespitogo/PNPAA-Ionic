@@ -15,18 +15,20 @@
 
   function init () {
 
-    var oldToken = simpleStorage.get('token');
+    return loginFailCB();
 
-    if (oldToken) {
-      $.get(host+'/users?token='+oldToken)
-      .success(function () {
-        loginSuccessCB(oldToken);
-      })
-      .fail(loginFailCB);
-    }
-    else {
-      loginFailCB();
-    }
+    // var oldToken = simpleStorage.get('token');
+
+    // if (oldToken) {
+    //   $.get(host+'/users?token='+oldToken)
+    //   .success(function () {
+    //     loginSuccessCB(oldToken);
+    //   })
+    //   .fail(loginFailCB);
+    // }
+    // else {
+    //   loginFailCB();
+    // }
 
   }
 

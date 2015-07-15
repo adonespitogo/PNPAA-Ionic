@@ -18,17 +18,16 @@
           template: 'Logging in...'
         });
 
-        Auth.login($scope.loginData)
-        .success(function () {
-          $state.go(homeState);
-          $ionicLoading.hide();
-        })
-        .error(function (resp) {
+        simpleStorage.set('token', 'fasodf9');
+        $state.go(homeState);
+        return $ionicLoading.hide();
 
-          simpleStorage.set('token', '3j4roqjweofeoasfj');
-          $state.go(homeState);
-          $ionicLoading.hide();
-
+        // Auth.login($scope.loginData)
+        // .success(function () {
+        //   $state.go(homeState);
+        //   $ionicLoading.hide();
+        // })
+        // .error(function (resp) {
 
           // resp = resp || 'Unable to login.';
 
@@ -41,7 +40,8 @@
           //   template: err
           // });
 
-        });
+        // });
+
       };
 
     }
