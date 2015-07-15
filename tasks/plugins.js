@@ -4,8 +4,12 @@ var gulp = require('gulp'),
     del = require('del'),
     shell = require('shelljs');
 
-gulp.task('plugins', function() {
+gulp.task('plugins:empty', function () {
+  return shell.rm('-r', 'plugins');
+});
 
-return gulp.src('dist')
+gulp.task('plugins', ['plugins:empty'], function() {
+
+return gulp.src('plugins')
       .pipe(plugin(plugins));
 });

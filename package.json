@@ -14,7 +14,7 @@
     "gulp-concat": "^2.2.0",
     "gulp-concat-css": "^2.2.0",
     "gulp-cordova-build-android": "git@github.com:adonespitogo/gulp-cordova-build-android.git",
-    "gulp-cordova-plugin": "^1.1.0",
+    "gulp-cordova-plugin": "git@github.com:adonespitogo/gulp-cordova-plugin.git",
     "gulp-jshint": "^1.11.2",
     "gulp-minify-css": "^0.3.0",
     "gulp-replace": "^0.5.3",
@@ -24,7 +24,7 @@
     "gulp-util": "^2.2.14",
     "jshint-stylish": "^2.0.1",
     "require-dir": "^0.3.0",
-    "shelljs": "^0.3.0"
+    "shelljs": "node_modules/shelljs"
   },
   "cordovaPlugins": [
     "cordova-plugin-device",
