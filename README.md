@@ -5,7 +5,7 @@ Prepare your system
 --------------
  - Install [android sdk](https://developer.android.com/sdk/installing/index.html)
  - Install [nodejs](https://nodejs.org/download/)
- - Install cordova and ionic - `npm install -g cordova ionic gulp`
+ - Install `cordova` `ionic` and `gulp` -> `npm install -g cordova ionic gulp`
 
 Prepare dev environment
 ------------------------------
