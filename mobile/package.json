@@ -15,11 +15,14 @@
   ],
   "devDependencies": {
     "del": "^1.2.0",
+    "gulp-cordova-build-android": "^1.1.0",
+    "gulp-cordova-plugin": "^1.1.0",
     "gulp-jshint": "^1.11.2",
     "gulp-replace": "^0.5.3",
     "gulp-uglify": "^1.2.0",
     "gulp-util": "^2.2.14",
     "jshint-stylish": "^2.0.1",
+    "require-dir": "^0.3.0",
     "shelljs": "^0.3.0"
   },
   "cordovaPlugins": [
