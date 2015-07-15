@@ -18,7 +18,7 @@ Prepare dev environment
  - `gulp plugins`
  - `cordova platform add android`
  - `ionic browser add crosswalk`
- - `gulp debug:web`
+ - `gulp debug:web` or `gulp debug:android`
 
 Gulp tasks
 -----------
