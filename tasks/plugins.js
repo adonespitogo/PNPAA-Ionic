@@ -6,8 +6,6 @@ var gulp = require('gulp'),
 
 gulp.task('plugins', function() {
 
-  return del(['plugins/**/*'], function () {
-    return gulp.src('dist')
-    .pipe(plugin(plugins));
-  });
+return gulp.src('dist')
+      .pipe(plugin(plugins));
 });
