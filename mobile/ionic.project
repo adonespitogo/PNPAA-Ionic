@@ -1,4 +1,11 @@
 {
   "name": "PNPAA",
-  "app_id": "com.pnpaa.ionic"
+  "app_id": "com.pnpaa.ionic",
+  "browsers": [
+    {
+      "platform": "android",
+      "browser": "crosswalk",
+      "version": "12.41.296.5"
+    }
+  ]
 }

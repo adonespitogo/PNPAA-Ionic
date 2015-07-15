@@ -33,7 +33,7 @@
         </div>
         <b>Attending</b>
         <ion-list>
-          <ion-item collection-repeat="i in [1,2,3]">
+          <ion-item ng-repeat="i in [1,2,3]">
             <i class="icon ion-person"></i>
             <small class="padding-left">Adones Pitogo</small>
           </ion-item>
@@ -42,7 +42,7 @@
       <div class="item item-divider">
         <small><i class="icon ion-chatbubbles"></i> 13 comments</small>
       </div>
-      <div class="item item-body comment" collection-repeat="i in [1,2,3,4,5,6]">
+      <div class="item item-body comment" ng-repeat="i in [1,2,3,4,5,6]">
         <div class="">
           <div class="post-owner">
             Maria Ozawa

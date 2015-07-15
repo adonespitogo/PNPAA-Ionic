@@ -16,7 +16,7 @@
   "devDependencies": {
     "del": "^1.2.0",
     "gulp-concat-css": "^2.2.0",
-    "gulp-cordova-build-android": "^1.1.0",
+    "gulp-cordova-build-android": "git@github.com:adonespitogo/gulp-cordova-build-android.git",
     "gulp-cordova-plugin": "^1.1.0",
     "gulp-jshint": "^1.11.2",
     "gulp-replace": "^0.5.3",
@@ -28,7 +28,6 @@
   },
   "cordovaPlugins": [
     "cordova-plugin-device",
-    "cordova-plugin-console",
     "cordova-plugin-whitelist",
     "cordova-plugin-splashscreen",
     "com.ionic.keyboard"
