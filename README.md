@@ -1,4 +1,4 @@
-Getting Started
+PNPAA Ionic App
 ===============
 
 Prepare your system
@@ -8,7 +8,7 @@ Prepare your system
  - Install `cordova` `ionic` `bower` and `gulp`
   - `npm install -g cordova ionic gulp bower`
 
-Prepare dev environment
+Getting started
 ------------------------------
  - `git clone git@github.com:adonespitogo/PNPAA-Ionic.git`
  - `cd PNPAA-Ionic`
