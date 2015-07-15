@@ -1,0 +1,6 @@
+.discussion{
+  @extend .comment;
+  .comment-count {
+    color: lighten($base_color, 50%);
+  }
+}

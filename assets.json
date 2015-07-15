@@ -1,0 +1,31 @@
+{
+  "sass": [
+      "app/scss/ionic.app.scss",
+      "app/scss/variables.scss",
+      "app/scss/discussion.scss",
+      "app/scss/comment.scss",
+      "app/scss/writepad.scss"
+    ],
+  "css": [
+    "app/css/app.css"
+  ],
+  "js": {
+    "libs": [
+      "bower_components/jquery/dist/jquery.js",
+      "bower_components/ionic/js/ionic.bundle.js",
+      "bower_components/simpleStorage/simpleStorage.js",
+      "bower_components/angular-http-auth/src/http-auth-interceptor.js",
+      "bower_components/ngAutocomplete/src/ngAutocomplete.js"
+    ],
+    "src": [
+      "app/js/init.js",
+      "app/js/app.js",
+      "app/js/values.js",
+      "app/js/routes.js",
+      "app/js/events/**/*.js",
+      "app/js/controllers/**/*.js",
+      "app/js/services/**/*.js",
+      "app/js/directives/**/*.js"
+    ]
+  }
+}

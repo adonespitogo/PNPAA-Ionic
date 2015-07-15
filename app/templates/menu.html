@@ -1,0 +1,43 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-stable">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+    <ion-content>
+
+      <ion-list>
+        <div class="item item-avatar">
+          <img src="img/profile.jpg" class="image-full">
+          <h2>Adones Pitogo</h2>
+          <p>Web Dev</p>
+        </div>
+        <ion-item class="item-icon-left" menu-close ui-sref="app.home">
+          <i class="icon ion-home padding-right"></i>
+          Home
+        </ion-item>
+        <ion-item class="item-icon-left" menu-close ui-sref="app.discussions">
+          <i class="icon ion-chatboxes padding-right"></i>
+          Discussions
+        </ion-item>
+        <ion-item class="item-icon-left" menu-close ui-sref="app.events">
+          <i class="icon ion-beer padding-right"></i>
+          Events
+        </ion-item>
+        <ion-item class="item-icon-left" menu-close ng-click="logout()">
+          <i class="icon ion-log-out padding-right"></i>
+          Logout
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>
