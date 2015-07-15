@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 var replace = require('gulp-replace');
 var build = 'build.js';
-var dist = '../www/js/';
+var dist = 'www/js/';
 
 gulp.task('host', ['concat'], function () {
 
