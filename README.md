@@ -15,7 +15,8 @@ Prepare dev environment
  - `bower install`
  - `gulp resources:unzip`
  - `gulp plugins`
- - `ionic platform add android`
+ - `cordova platform add android`
+ - `ionic browser add crosswalk`
  - `gulp debug:web`
 
 Gulp tasks
