@@ -2,6 +2,12 @@
 var gulp = require('gulp');
 var android = require('gulp-cordova-build-android');
 var del = require('del');
+var path = require('path');
+var cordovaLib = require('cordova-lib').cordova;
+
+
+var projectRoot = cordovaLib.findProjectRoot();
+
 
 gulp.task('release:android', ['build:assets','compress', 'host'], function(done) {
 
@@ -9,7 +15,7 @@ gulp.task('release:android', ['build:assets','compress', 'host'], function(done)
 
       gulp.src('../')
       .pipe(android({
-        storeFile: '/home/adones/Projects/Phonegap/PNPAA-Ionic/mobile/pnpaa-release.keystore',
+        storeFile: path.join(projectRoot, 'pnpaa-release.keystore'),
         keyAlias: 'alias_name',
         releaseApk: 'android-armv7-release.apk'
       }))
