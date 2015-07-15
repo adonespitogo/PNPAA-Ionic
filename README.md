@@ -27,3 +27,4 @@ Gulp tasks
  - `gulp plugins` - Install required cordova plugins
  - `gulp debug:android` - Install and run app in android device/emulator
  - `gulp release:android` - Creates ready to publish apk under `release/android/` directory
+ - See [tasks directory](./tasks/) for more
