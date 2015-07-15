@@ -4,7 +4,10 @@ var gulp = require('gulp'),
     del = require('del'),
     shell = require('shelljs');
 
-gulp.task('android:install', function() {
+gulp.task('plugins', function() {
+
+  return del(['plugins/**/*'], function () {
     return gulp.src('dist')
     .pipe(plugin(plugins));
+  });
 });
