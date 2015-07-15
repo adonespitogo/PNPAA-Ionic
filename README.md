@@ -1,12 +1,10 @@
 Getting Started
 ===============
 
- - `git clone git@github.com:adonespitogo/PNPAA-Ionic.git`
-
-Mobile
-------
-See [Mobile README.md](./mobile/README.md)
-
-Server
-------
-See [API README.md](./api/README.md)
+ - `cd PNPAA-Ionic/mobile`
+ - `npm install`
+ - `bower install`
+ - `gulp plugins`
+ - `ionic platform add android`
+ - `gulp serve`
+ - `gulp debug:android`
