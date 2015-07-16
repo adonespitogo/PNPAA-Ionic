@@ -19,7 +19,7 @@ gulp.task('clean:js', function (done) {
 });
 
 gulp.task('clean:templates', function (done) {
-  del(['www/templates/**/*'], done);
+  del(['www/**/*.html'], done);
 });
 
 gulp.task('clean', ['clean:css', 'clean:fonts', 'clean:img', 'clean:js', 'clean:templates']);

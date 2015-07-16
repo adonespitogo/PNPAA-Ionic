@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 
 gulp.task('copy:templates', ['clean:templates'], function () {
-  return gulp.src('app/templates/**/*.html').pipe(gulp.dest('www/templates'));
+  return gulp.src('app/**/*.html').pipe(gulp.dest('www/'));
 });
 
 gulp.task('copy:images', ['clean:img'], function () {

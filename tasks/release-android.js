@@ -9,8 +9,19 @@ var releaseAPK = process.env.apk === 'x86'? 'android-x86-release.apk' : 'android
 
 var projectRoot = cordovaLib.findProjectRoot();
 
+gulp.task('release:android:apk:x86', function (done) {
+  releaseAPK = 'android-x86-release.apk';
+  done();
+});
 
-gulp.task('release:android', ['build:assets','compress', 'host'], function(done) {
+
+gulp.task('release:android:apk:armv7', function (done) {
+  releaseAPK = 'android-armv7-release.apk';
+  done();
+});
+
+
+gulp.task('release:android', ['build:assets','compress', 'host', 'release:version:increment'], function(done) {
 
     del(['platforms/android/build/outputs/apk/'], function () {
 
@@ -25,3 +36,6 @@ gulp.task('release:android', ['build:assets','compress', 'host'], function(done)
 
     });
 });
+
+gulp.task('release:android:x86', ['release:android:apk:x86', 'release:android']);
+gulp.task('release:android:armv7', ['release:android:apk:armv7', 'release:android']);

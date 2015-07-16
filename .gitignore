@@ -10,7 +10,7 @@ resources/icon.png
 www/css/
 www/js/
 www/fonts/
-www/templates/
+www/**/*.html
 www/img/
 www/bower_components/
 releases/
