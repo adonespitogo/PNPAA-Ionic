@@ -5,18 +5,32 @@
     '$scope', '$ionicPopover',
     function ($scope, $ionicPopover) {
 
-      var popover;
+      var discussionPO;
 
-      $ionicPopover.fromTemplateUrl('templates/events/event-popover.html', {
+      $ionicPopover.fromTemplateUrl('templates/discussions/discussion-popover.html', {
         scope: $scope
       })
-      .then(function (po) {
-        popover = po;
+      .then(function (popover) {
+        discussionPO = popover;
       });
 
-      $scope.showActions = function ($event) {
-        popover.show($event);
+      var commentPO;
+
+      $ionicPopover.fromTemplateUrl('templates/discussions/comment-popover.html', {
+        scope: $scope
+      })
+      .then(function (popover) {
+        commentPO = popover;
+      });
+
+      $scope.showDiscussionActions = function ($event) {
+        discussionPO.show($event);
       };
+
+      $scope.showCommentActions = function ($event) {
+        commentPO.show($event);
+      };
+
     }
 
   ]);
