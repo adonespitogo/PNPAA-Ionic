@@ -1,15 +1,19 @@
 var gulp = require('gulp'),
     plugin = require('gulp-cordova-plugin'),
-    plugins = require('../package.json').cordovaPlugins,
+    pkg = require('../package.json'),
     del = require('del'),
-    shell = require('shelljs');
+    path = require('path');
 
-gulp.task('plugins:empty', function () {
-  return shell.rm('-r', 'plugins');
+
+var cordovaLib = require('cordova-lib').cordova;
+var projectRoot = cordovaLib.findProjectRoot();
+var pluginsPath = path.join(projectRoot, 'plugins');
+
+gulp.task('plugins:empty', function (done) {
+    del(pluginsPath, done);
 });
 
 gulp.task('plugins', ['plugins:empty'], function() {
-
-return gulp.src('plugins')
-      .pipe(plugin(plugins));
+     return gulp.src(projectRoot)
+        .pipe(plugin(pkg.cordovaPlugins));
 });
