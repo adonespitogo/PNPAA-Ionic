@@ -1,29 +1,24 @@
 (function () {
 
-App.controller('AppCtrl', [
-  '$scope', 'Auth', '$ionicLoading', '$timeout',
-  function($scope, Auth, $ionicLoading, $timeout) {
+  'use strict';
 
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
+  App.controller('AppCtrl', [
+    '$scope', 'Auth', '$ionicLoading', '$timeout',
+    function($scope, Auth, $ionicLoading, $timeout) {
 
-  $scope.logout = function () {
+    $scope.logout = function () {
 
-    $ionicLoading.show({
-     template: 'Logging out...'
-    });
+      $ionicLoading.show({
+       template: 'Logging out...'
+      });
 
-    $timeout(function () {
-      Auth.logout();
-      $ionicLoading.hide();
-    }, 1000);
-  };
+      $timeout(function () {
+        Auth.logout();
+        $state.go('login');
+        $ionicLoading.hide();
+      }, 1000);
+    };
 
-}]);
-
+  }]);
 
 }).call(window);

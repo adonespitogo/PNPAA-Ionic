@@ -28,7 +28,6 @@
         simpleStorage.deleteKey('token');
         self.token = null;
         self.user = null;
-        $state.go('login');
       };
 
     }
