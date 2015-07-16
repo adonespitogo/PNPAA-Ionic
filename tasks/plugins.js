@@ -12,19 +12,23 @@ var gulp = require('gulp'),
     pluginsPath = path.join(projectRoot, 'plugins'),
     shell = require('shelljs');
 
-gulp.task('platform:remove:android', function () {
-    return shell.exec('ionic platform rm android');
+gulp.task('platform:remove:android', function (done) {
+    shell.exec('ionic platform rm android', {async:true}, done);
+});
+
+gulp.task('plugins:uninstall', ['platform:remove:android', 'plugins:empty'], function (done) {
+    shell.exec('ionic platform add android', {async: true, silent: true}, done);
 });
 
 gulp.task('plugins:empty', function (done) {
     del(pluginsPath, done);
 });
 
-gulp.task('add:crosswalk:browser', ['platform:remove:android', 'plugins:empty'], function () {
-    return shell.exec('ionic browser add crosswalk');
+gulp.task('add:crosswalk:browser', ['platform:remove:android', 'plugins:empty'], function (done) {
+    shell.exec('ionic browser add crosswalk', {async:true}, done);
 });
 
-gulp.task('plugins', ['plugins:empty', 'platform:remove:android', 'add:crosswalk:browser'], function() {
+gulp.task('plugins:install', ['plugins:empty', 'platform:remove:android', 'add:crosswalk:browser'], function() {
      return gulp.src(projectRoot)
         .pipe(plugin(pkg.cordovaPlugins));
 });

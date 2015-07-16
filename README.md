@@ -14,10 +14,8 @@ Getting started
  - `cd PNPAA-Ionic`
  - `npm install`
  - `bower install`
+ - `gulp plugins:install`
  - `gulp resources:unzip`
- - `gulp plugins`
- - `cordova platform add android`
- - `ionic browser add crosswalk`
  - `gulp debug:web` or `gulp debug:android`
 
 Gulp tasks
