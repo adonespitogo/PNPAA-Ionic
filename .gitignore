@@ -5,8 +5,7 @@ node_modules/
 bower_components/
 platforms/
 plugins/
-resources/splash.png
-resources/icon.png
+resources/
 www/css/
 www/js/
 www/fonts/
@@ -15,5 +14,3 @@ www/img/
 www/bower_components/
 releases/
 .tmp/
-app/css/
-resources/
