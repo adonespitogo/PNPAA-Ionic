@@ -3,8 +3,8 @@
   'use strict';
 
   App.controller('AppCtrl', [
-    '$scope', 'Auth', '$ionicLoading', '$timeout',
-    function($scope, Auth, $ionicLoading, $timeout) {
+    '$scope', 'Auth', '$ionicLoading', '$timeout', '$state',
+    function($scope, Auth, $ionicLoading, $timeout, $state) {
 
     $scope.logout = function () {
 
