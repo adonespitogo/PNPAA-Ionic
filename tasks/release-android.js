@@ -25,7 +25,7 @@ gulp.task('release:android', ['build:assets','compress', 'host', 'release:versio
 
     del(['platforms/android/build/outputs/apk/'], function () {
 
-      gulp.src('../')
+      gulp.src(projectRoot)
       .pipe(android({
         storeFile: path.join(projectRoot, 'pnpaa-release.keystore'),
         keyAlias: 'alias_name',

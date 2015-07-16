@@ -1,13 +1,11 @@
 var gulp = require('gulp'),
     plugin = require('gulp-cordova-plugin'),
-    pkg = require('../package.json'),
+    cordovaLib = require('cordova-lib').cordova,
+    projectRoot = cordovaLib.findProjectRoot(),
+    path = require('path'),
+    pkg = require(path.join(projectRoot, 'package.json')),
     del = require('del'),
-    path = require('path');
-
-
-var cordovaLib = require('cordova-lib').cordova;
-var projectRoot = cordovaLib.findProjectRoot();
-var pluginsPath = path.join(projectRoot, 'plugins');
+    pluginsPath = path.join(projectRoot, 'plugins');
 
 gulp.task('plugins:empty', function (done) {
     del(pluginsPath, done);
