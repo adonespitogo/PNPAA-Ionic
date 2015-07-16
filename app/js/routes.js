@@ -79,6 +79,24 @@
           }
         }
       })
+
+      .state('app.departments', {
+        url: "/departments",
+        views: {
+          'menuContent': {
+            templateUrl: "templates/departments/list.html"
+          }
+        }
+      })
+
+      .state('app.department', {
+        url: "/department",
+        views: {
+          'menuContent': {
+            templateUrl: "templates/departments/department.html"
+          }
+        }
+      })
     ;
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/app/home');
