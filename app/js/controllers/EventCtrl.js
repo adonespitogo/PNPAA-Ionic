@@ -6,6 +6,7 @@
     function ($scope, $ionicPopover) {
 
       var eventPopover;
+      var commentPopover;
 
       $ionicPopover.fromTemplateUrl('templates/events/event-popover.html', {
         scope: $scope
@@ -13,8 +14,6 @@
       .then(function (po) {
         eventPopover = po;
       });
-
-      var commentPopover;
 
       $ionicPopover.fromTemplateUrl('templates/events/comment-popover.html', {
         scope: $scope

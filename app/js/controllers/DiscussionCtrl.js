@@ -6,6 +6,7 @@
     function ($scope, $ionicPopover) {
 
       var discussionPO;
+      var commentPO;
 
       $ionicPopover.fromTemplateUrl('templates/discussions/discussion-popover.html', {
         scope: $scope
@@ -13,8 +14,6 @@
       .then(function (popover) {
         discussionPO = popover;
       });
-
-      var commentPO;
 
       $ionicPopover.fromTemplateUrl('templates/discussions/comment-popover.html', {
         scope: $scope
