@@ -1,20 +1,24 @@
-<ion-view view-title="Login">
-  <ion-content class="padding">
-      <div class="row">
-        <div class="col col-50 col-offset-25 padding-vertical">
-          <img src="img/logo.png" alt="" class="full-image">
+<ion-view class="login" view-title="Login">
+  <ion-content>
+      <div class="padding">
+        <div class="row">
+          <div class="col col-50 col-offset-25 padding-vertical">
+            <img src="img/logo.png" alt="" class="full-image">
+          </div>
         </div>
+        <form ng-submit="login()">
+          <div class="list list-inset">
+            <label class="item item-input">
+                <input name="email" type="email" placeholder="Email" ng-model="loginData.email">
+            </label>
+            <label class="item item-input">
+                <input name="password" type="password" placeholder="Password" ng-model="loginData.password">
+            </label>
+            <div class="padding-horizontal">
+              <button class="button button-block button-positive">Login</button>
+            </div>
+          </div>
+        </form>
       </div>
-      <form ng-submit="login()">
-        <div class="list list-inset">
-          <label class="item item-input">
-              <input name="email" type="email" placeholder="Email" ng-model="loginData.email">
-          </label>
-          <label class="item item-input">
-              <input name="password" type="password" placeholder="Password" ng-model="loginData.password">
-          </label>
-          <button class="button button-block button-positive">Login</button>
-        </div>
-      </form>
   </ion-content>
 </ion-view>

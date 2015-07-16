@@ -4,7 +4,8 @@
       "app/scss/variables.scss",
       "app/scss/discussion.scss",
       "app/scss/comment.scss",
-      "app/scss/writepad.scss"
+      "app/scss/writepad.scss",
+      "app/scss/login.scss"
     ],
   "css": [],
   "js": {
