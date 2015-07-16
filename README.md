@@ -32,7 +32,7 @@ Gulp tasks
 
 Important files and directories
 -------------------------------
- - [assets.json](./assets.json) - Describes how assets are structured
+ - [assets.json](./assets.json) - Determines the assets to include for compilation
  - [/app](./app/) - Contains sources files that are concatinated, minified and copied into [/www](./www/)
  - [/www](./www/) - Contains minified assets
  - [/tasks](./tasks) - Contains gulp tasks
