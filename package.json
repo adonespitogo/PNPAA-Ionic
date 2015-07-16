@@ -9,7 +9,7 @@
   "devDependencies": {
     "argv": "0.0.2",
     "cordova-lib": "^5.1.1",
-    "cordova-root": "adonespitogo/cordova-root",
+    "cordova-root": "0.0.1",
     "del": "^1.2.0",
     "gulp": "^3.5.6",
     "gulp-concat": "^2.2.0",
