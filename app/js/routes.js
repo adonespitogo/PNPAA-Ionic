@@ -25,6 +25,15 @@
         }
       })
 
+      .state('app.account', {
+        url: '/account',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/account.html'
+          }
+        }
+      })
+
       .state('app', {
         url: "/app",
         abstract: true,
