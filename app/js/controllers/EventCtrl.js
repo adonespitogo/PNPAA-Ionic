@@ -5,17 +5,30 @@
     '$scope', '$ionicPopover',
     function ($scope, $ionicPopover) {
 
-      var popover;
+      var eventPopover;
 
       $ionicPopover.fromTemplateUrl('templates/events/event-popover.html', {
         scope: $scope
       })
       .then(function (po) {
-        popover = po;
+        eventPopover = po;
       });
 
-      $scope.showActions = function ($event) {
-        popover.show($event);
+      var commentPopover;
+
+      $ionicPopover.fromTemplateUrl('templates/events/comment-popover.html', {
+        scope: $scope
+      })
+      .then(function (po) {
+        commentPopover = po;
+      });
+
+      $scope.showEventActions = function ($event) {
+        eventPopover.show($event);
+      };
+
+      $scope.showCommentActions = function ($event) {
+        commentPopover.show($event);
       };
     }
 

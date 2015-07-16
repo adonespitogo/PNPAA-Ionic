@@ -1,7 +1,7 @@
 <ion-view view-title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis consequatur nostrum, tempora delectus debitis porro quia doloribus? Neque suscipit, numquam eaque rerum est tempore libero illo at nemo ut sed!">
 
   <ion-nav-buttons side="right">
-    <button class="button button-icon" ng-click="showActions($event)">
+    <button class="button button-icon" ng-click="showEventActions($event)">
       <i class="icon ion-android-more-vertical"></i>
     </button>
   </ion-nav-buttons>
@@ -45,7 +45,7 @@
       <div class="item item-body comment" ng-repeat="i in [1,2,3,4,5,6]">
         <div class="">
           <div class="post-owner">
-            Maria Ozawa
+            Maria Ozawa <a class="icon ion-chevron-down pull-right" ng-click="showCommentActions($event)"></a>
           </div>
           <div class="post-datetime">July 1, 2015 1:30 PM</div>
           <div class="post-content">
