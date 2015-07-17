@@ -5,6 +5,7 @@
 
   function loginFailCB () {
     simpleStorage.deleteKey('token');
+    window.history.pushState({}, 'login', '#/login');
     angular.bootstrap(document, ['PNPAA']);
   }
 
