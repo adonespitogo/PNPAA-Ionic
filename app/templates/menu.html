@@ -15,7 +15,7 @@
   <ion-side-menu side="left">
     <ion-content>
 
-      <ion-list>
+      <div class="list">
         <div class="item item-avatar" menu-close ui-sref="app.account">
           <img src="img/profile.jpg" class="image-full">
           <h2>Adones Pitogo</h2>
@@ -34,14 +34,18 @@
           Events
         </div>
         <div class="item item-icon-left" menu-close ui-sref="app.departments">
-          <i class="icon ion-android-people padding-right"></i>
+          <i class="icon ion-ios-people padding-right"></i>
           Departments
+        </div>
+        <div class="item item-icon-left" menu-close ui-sref="app.batches">
+          <i class="icon ion-android-people padding-right"></i>
+          People
         </div>
         <div class="item item-icon-left" menu-close ng-click="logout()">
           <i class="icon ion-log-out padding-right"></i>
           Logout
         </div>
-      </ion-list>
+      </div>
     </ion-content>
   </ion-side-menu>
 </ion-side-menus>

@@ -106,6 +106,24 @@
           }
         }
       })
+
+      .state('app.batches', {
+        url: "/batches",
+        views: {
+          'menuContent': {
+            templateUrl: "templates/batches/list.html"
+          }
+        }
+      })
+
+      .state('app.batch', {
+        url: "/batch",
+        views: {
+          'menuContent': {
+            templateUrl: "templates/batches/batch.html"
+          }
+        }
+      })
     ;
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/app/home');
