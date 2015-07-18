@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  window.host = "http://localhost:1337";
+  window.host = "http://localhost:8080";
 
   function loginFailCB () {
     simpleStorage.deleteKey('token');
@@ -16,20 +16,28 @@
 
   function init () {
 
-    return loginFailCB();
+    var oldToken = simpleStorage.get('token');
 
-    // var oldToken = simpleStorage.get('token');
-
-    // if (oldToken) {
-    //   $.get(host+'/users?token='+oldToken)
-    //   .success(function () {
-    //     loginSuccessCB(oldToken);
-    //   })
-    //   .fail(loginFailCB);
-    // }
-    // else {
-    //   loginFailCB();
-    // }
+    if (oldToken) {
+      $.ajax({
+        method:"POST",
+        beforeSend: function (request)
+        {
+          request.setRequestHeader("Authorization", "Bearer " + oldToken);
+        },
+        url: host + "/auth/verify",
+        processData: false,
+        success: function(msg) {
+          loginSuccessCB(oldToken);
+        },
+        error: function () {
+          loginFailCB();
+        }
+      });
+    }
+    else {
+      loginFailCB();
+    }
 
   }
 
