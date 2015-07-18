@@ -1,13 +1,17 @@
 {
   "sass": [
-      "app/scss/ionic.app.scss",
-      "app/scss/variables.scss",
-      "app/scss/discussion.scss",
-      "app/scss/comment.scss",
-      "app/scss/writepad.scss",
-      "app/scss/login.scss"
-    ],
-  "css": [],
+    "app/scss/ionic.app.scss",
+    "app/scss/variables.scss",
+    "app/scss/discussion.scss",
+    "app/scss/comment.scss",
+    "app/scss/writepad.scss",
+    "app/scss/login.scss",
+    "app/scss/mixins.scss",
+    "app/scss/app-loading.scss"
+  ],
+  "css": [
+    "app/css/app-loading.css"
+  ],
   "js": {
     "libs": [
       "bower_components/jquery/dist/jquery.js",

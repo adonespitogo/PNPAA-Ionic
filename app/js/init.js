@@ -3,15 +3,30 @@
 
   window.host = "http://localhost:8080";
 
+  function bootstrap() {
+    angular.bootstrap(document, ['PNPAA']);
+    setTimeout(function () {
+      $('body').removeClass('init');
+      var view = $('#app');
+      var loading = $('#app-loading');
+      loading.addClass('fade');
+      view.removeClass('ng-hide');
+      setTimeout(function () {
+        loading.remove();
+        view.addClass('show');
+      }, 1500);
+    }, 3000);
+  }
+
   function loginFailCB () {
     simpleStorage.deleteKey('token');
     window.history.pushState({}, 'login', '#/login');
-    angular.bootstrap(document, ['PNPAA']);
+    bootstrap();
   }
 
   function loginSuccessCB (token) {
     window.token = token;
-    angular.bootstrap(document, ['PNPAA']);
+    bootstrap();
   }
 
   function init () {
