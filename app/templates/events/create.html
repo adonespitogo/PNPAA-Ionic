@@ -1,10 +1,10 @@
 <ion-view view-title="New Event">
 
 <ion-content>
-  <form class="list">
+  <form class="list" ng-submit="createEvent(event)">
     <label class="item item-input item-stacked-label">
       <span class="input-label">Event title</span>
-      <input type="text" placeholder="Event title">
+      <input type="text" placeholder="Event title" ng-model="event.title">
     </label>
     <label class="item item-input item-stacked-label">
       <span class="input-label">Description</span>

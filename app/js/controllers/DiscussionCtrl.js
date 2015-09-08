@@ -2,8 +2,10 @@
   'use strict';
 
   App.controller('DiscussionCtrl', [
-    '$scope', '$ionicPopover',
-    function ($scope, $ionicPopover) {
+    '$scope',
+    '$ionicPopover',
+    'Discussion',
+    function ($scope, $ionicPopover, Discussion) {
 
       var discussionPO;
       var commentPO;
@@ -29,6 +31,10 @@
       $scope.showCommentActions = function ($event) {
         commentPO.show($event);
       };
+
+      Discussion.fetch().then(function (resp) {
+        console.log(resp);
+      });
 
     }
 
